@@ -19,3 +19,11 @@ code {
 .leaflet-container {
   height: 100%;
 }
+
+.content {
+  height: 86%;
+}
+
+.header-footer {
+  height: 7%;
+}
