@@ -14,7 +14,20 @@ const App = () => {
     setGeoJson(jsonData);
   }, []);
 
-  return <div className="App"></div>;
+  return (
+    <div className="h-screen">
+      <div className="h-full">
+        <div className="bg-zinc-700 text-white text-center h-1/6">
+          Indicators of Potential Disadvantage (IPD)
+        </div>
+        <div className="flex h-2/3">
+          <div className="w-1/4">sidebar</div>
+          <div className="w-3/4">content</div>
+        </div>
+        <div className="h-1/6">footer</div>
+      </div>
+    </div>
+  );
 };
 
 export default App;
