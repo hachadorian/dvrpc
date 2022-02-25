@@ -18,28 +18,28 @@ const App = () => {
   }, []);
 
   return (
-    <div className="h-screen">
-      <div className="bg-zinc-700 text-white text-center header-footer">
+    <div className="h-screen font-sans">
+      <div className="bg-zinc-700 text-white header-footer flex items-center justify-center">
         Indicators of Potential Disadvantage (IPD)
       </div>
-      <div className="flex flex-col-reverse md:flex-row content">
-        <div className="md:w-1/4">
+      <div className="flex flex-col md:flex-none h-full content">
+        <div className="md:w-2/5 md:absolute lg:w-1/4 h-1/2 rounded-lg z-1000 bg-white md:m-2 flex justify-center">
           <Sidebar feature={feature} />
         </div>
-        <div className="md:w-3/4 h-full">
+        <div className="h-full relative">
           <Map geoJson={geoJson} setFeature={setFeature} />
         </div>
       </div>
-      <div className="header-footer">
+      <div className="header-footer flex">
         <div>
-          Data provided by DVRPC, 2019 Indicators of Potential Disadvantage
-        </div>
-        <a
-          href=" https://dvrpc-dvrpcgis.opendata.arcgis.com/datasets/greater-
+          Data provided by DVRPC,{" "}
+          <a
+            href=" https://dvrpc-dvrpcgis.opendata.arcgis.com/datasets/greater-
 philadelphia-tract-level-indicators-of-potential-disadvantage-ipd-2019/explore"
-        >
-          data
-        </a>
+          >
+            2019 Indicators of Potential Disadvantage
+          </a>
+        </div>
       </div>
     </div>
   );

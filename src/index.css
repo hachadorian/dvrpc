@@ -20,10 +20,16 @@ code {
   height: 100%;
 }
 
-.content {
-  height: 86%;
+.header-footer {
+  height: 5%;
 }
 
-.header-footer {
-  height: 7%;
+.z-1000 {
+  z-index: 1000;
+}
+
+@media only screen and (min-width: 750px) {
+  .content {
+    height: 90%;
+  }
 }

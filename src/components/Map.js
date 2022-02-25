@@ -1,5 +1,5 @@
 import React from "react";
-import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
+import { MapContainer, TileLayer, GeoJSON, ZoomControl } from "react-leaflet";
 import { getColor } from "../helpers/getColor";
 
 const Map = ({ geoJson, setFeature }) => {
@@ -35,7 +35,7 @@ const Map = ({ geoJson, setFeature }) => {
   };
 
   return (
-    <MapContainer center={[40.07, -75.22]} zoom={13}>
+    <MapContainer center={[40.07, -75.22]} zoom={9} zoomControl={false}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -45,6 +45,7 @@ const Map = ({ geoJson, setFeature }) => {
         style={mapStyle}
         onEachFeature={mapOnEachFeature}
       />
+      <ZoomControl position="topright" />
     </MapContainer>
   );
 };
