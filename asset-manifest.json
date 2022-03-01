@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dvrpc/static/css/main.3cca8fe6.css",
+    "main.js": "/dvrpc/static/js/main.f596db6a.js",
+    "index.html": "/dvrpc/index.html",
+    "main.3cca8fe6.css.map": "/dvrpc/static/css/main.3cca8fe6.css.map",
+    "main.f596db6a.js.map": "/dvrpc/static/js/main.f596db6a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3cca8fe6.css",
+    "static/js/main.f596db6a.js"
+  ]
+}
