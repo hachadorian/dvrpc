@@ -16,15 +16,19 @@ const Legend = ({ map }) => {
             <div class="flex justify-end">36</div>
             </div>
             <div class="flex">
-            <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#fff7fb"></div>
-            <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#ece7f2"></div>
-            <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#d0d1e6"></div>
-            <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#a6bddb"></div>
-            <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#74a9cf"></div>
-            <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#3690c0"></div>
-            <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#0570b0"></div>
-            <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#045a8d"></div>
-            <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#023858"></div>
+              <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#fefedb"></div>
+              <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#edf7b7"></div>
+              <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#cbeaba"></div>
+              <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#8ad0c0"></div>
+              <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#4ebac8"></div>
+              <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#2a94bf"></div>
+              <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#386eb1"></div>
+              <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#3a489d"></div>
+              <div class="h-3 w-3 md:h-5 md:w-5" style="background-color:#203368"></div>
+            </div>
+            <div class="flex items-center py-2">
+              <div class="h-3 w-3 md:h-5 md:w-5 border-2" style="background-color:white"></div>
+              <div class="ml-2">No Data</div>
             </div>
         </div>`;
         return div;

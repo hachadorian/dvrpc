@@ -16,6 +16,14 @@ const Map = ({ geoJson, setFeature }) => {
     };
   };
 
+  const setFeatureStyle = (layer) => {
+    layer.setStyle({
+      color: "#EFD780",
+      weight: 3,
+    });
+    layer.bringToFront();
+  };
+
   const mapOnEachFeature = (feature, layer) => {
     // disables polygons without ipd_score
     if (feature.properties.ipd_score < 0) {
@@ -26,19 +34,18 @@ const Map = ({ geoJson, setFeature }) => {
     layer.on("click", () => {
       // set feature to display breakdown of scores
       setFeature(feature);
+      setFeatureStyle(layer);
+      layer.bringToFront();
     });
     layer.on("mouseover", () => {
-      layer.setStyle({
-        color: "#EFD780",
-        weight: 3,
-      });
-      layer.bringToFront();
+      setFeatureStyle(layer);
     });
     layer.on("mouseout", () => {
       layer.setStyle({
         color: "grey",
         weight: 1,
       });
+      layer.bringToBack();
     });
   };
 
@@ -51,7 +58,7 @@ const Map = ({ geoJson, setFeature }) => {
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
       />
       <GeoJSON
         data={geoJson}
