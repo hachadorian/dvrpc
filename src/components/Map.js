@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { MapContainer, TileLayer, GeoJSON, ZoomControl } from "react-leaflet";
 import { getColor } from "../helpers/getColor";
+import Legend from "./Legend";
 
 const Map = ({ geoJson, setFeature }) => {
+  const [map, setMap] = useState(null);
+
   const mapStyle = (feature) => {
     return {
       fillColor: `${getColor(feature.properties.ipd_score)}`,
@@ -26,7 +29,7 @@ const Map = ({ geoJson, setFeature }) => {
     });
     layer.on("mouseover", () => {
       layer.setStyle({
-        color: "red",
+        color: "#EFD780",
         weight: 3,
       });
       layer.bringToFront();
@@ -40,7 +43,12 @@ const Map = ({ geoJson, setFeature }) => {
   };
 
   return (
-    <MapContainer center={[40.07, -75.22]} zoom={9} zoomControl={false}>
+    <MapContainer
+      center={[40.07, -75.22]}
+      zoom={9}
+      zoomControl={false}
+      whenCreated={setMap}
+    >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -51,6 +59,7 @@ const Map = ({ geoJson, setFeature }) => {
         onEachFeature={mapOnEachFeature}
       />
       <ZoomControl position="topright" />
+      <Legend map={map} />
     </MapContainer>
   );
 };

@@ -36,7 +36,7 @@ const App = () => {
           <Map geoJson={geoJson} setFeature={setFeature} />
         </div>
       </div>
-      <div className="header-footer flex bg-zinc-900 text-white font-bold flex justify-center text-xs md:text-base">
+      <div className="header-footer flex bg-zinc-900 text-white font-bold flex justify-center items-center text-xs md:text-base">
         <div>
           Data provided by DVRPC,{" "}
           <a
