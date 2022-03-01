@@ -5,6 +5,7 @@ import { formatProperties } from "../helpers/formatProperties";
 const Sidebar = ({ feature }) => {
   let formattedProperties = null;
   if (feature) {
+    // format properties to match recharts required format
     formattedProperties = formatProperties(feature.properties);
   }
 

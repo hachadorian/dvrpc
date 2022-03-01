@@ -14,24 +14,29 @@ const Map = ({ geoJson, setFeature }) => {
   };
 
   const mapOnEachFeature = (feature, layer) => {
+    // disables polygons without ipd_score
     if (feature.properties.ipd_score < 0) {
       layer.options.interactive = false;
     }
+
+    // polygon event handlers
     layer.on("click", () => {
+      // set feature to display breakdown of scores
       setFeature(feature);
     });
-    // layer.on("mouseover", () => {
-    //   layer.setStyle({
-    //     color: "red",
-    //     weight: "3px",
-    //   });
-    // });
-    // layer.on("mouseout", () => {
-    //   layer.setStyle({
-    //     color: "grey",
-    //     weight: "",
-    //   });
-    // });
+    layer.on("mouseover", () => {
+      layer.setStyle({
+        color: "red",
+        weight: 3,
+      });
+      layer.bringToFront();
+    });
+    layer.on("mouseout", () => {
+      layer.setStyle({
+        color: "grey",
+        weight: 1,
+      });
+    });
   };
 
   return (

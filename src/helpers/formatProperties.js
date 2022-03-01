@@ -1,4 +1,8 @@
-// recharts formatting
+/**
+ * takes array of properties and reformats to adhere to recharts format
+ * @param {Array} properties
+ * @returns Array
+ */
 export const formatProperties = (properties) => {
   const keyNames = [
     "Youth",

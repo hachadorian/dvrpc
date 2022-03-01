@@ -16,6 +16,7 @@ code {
     monospace;
 }
 
+/* required for map to be visible */
 .leaflet-container {
   height: 100%;
 }

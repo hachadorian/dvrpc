@@ -1,3 +1,8 @@
+/**
+ * function that assigns color based upon ipd_score
+ * @param {int} score
+ * @returns String
+ */
 export const getColor = (score) => {
   const shade = Math.ceil((9 * score) / 36) + 1;
   if (shade < 0) return colorWheel[0];

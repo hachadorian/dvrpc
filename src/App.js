@@ -13,14 +13,20 @@ const App = () => {
     //   setGeoJson(res);
     // });
 
-    // testing
     setGeoJson(jsonData);
   }, []);
 
   return (
     <div className="h-screen font-sans">
-      <div className="bg-zinc-700 text-white header-footer flex items-center justify-center">
-        Indicators of Potential Disadvantage (IPD)
+      <div className="bg-blue-500 text-white header-footer font-bold flex items-center">
+        <img
+          className="h-7 mt-1 mx-8"
+          alt="logo"
+          src={require("./assets/DVRPC-logo.png")}
+        />
+        <div className="text-xs md:text-base">
+          Indicators of Potential Disadvantage (IPD)
+        </div>
       </div>
       <div className="flex flex-col md:flex-none h-full content">
         <div className="md:w-2/5 md:absolute lg:w-1/4 h-1/2 rounded-lg z-1000 bg-white md:m-2 flex justify-center">
@@ -30,10 +36,11 @@ const App = () => {
           <Map geoJson={geoJson} setFeature={setFeature} />
         </div>
       </div>
-      <div className="header-footer flex">
+      <div className="header-footer flex bg-zinc-900 text-white font-bold flex justify-center text-xs md:text-base">
         <div>
           Data provided by DVRPC,{" "}
           <a
+            className="underline"
             href=" https://dvrpc-dvrpcgis.opendata.arcgis.com/datasets/greater-
 philadelphia-tract-level-indicators-of-potential-disadvantage-ipd-2019/explore"
           >
