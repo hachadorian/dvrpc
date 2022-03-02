@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/dvrpc/static/css/main.3cca8fe6.css",
-    "main.js": "/dvrpc/static/js/main.f596db6a.js",
+    "main.css": "/dvrpc/static/css/main.f1bc3449.css",
+    "main.js": "/dvrpc/static/js/main.5540cfb8.js",
     "index.html": "/dvrpc/index.html",
-    "main.3cca8fe6.css.map": "/dvrpc/static/css/main.3cca8fe6.css.map",
-    "main.f596db6a.js.map": "/dvrpc/static/js/main.f596db6a.js.map"
+    "main.f1bc3449.css.map": "/dvrpc/static/css/main.f1bc3449.css.map",
+    "main.5540cfb8.js.map": "/dvrpc/static/js/main.5540cfb8.js.map"
   },
   "entrypoints": [
-    "static/css/main.3cca8fe6.css",
-    "static/js/main.f596db6a.js"
+    "static/css/main.f1bc3449.css",
+    "static/js/main.5540cfb8.js"
   ]
 }
