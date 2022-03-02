@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import jsonData from "./helpers/object.json";
+// import jsonData from "./helpers/object.json";
 import Sidebar from "./components/Sidebar";
 import Map from "./components/Map";
 import Loader from "./components/Loader";
@@ -54,8 +54,7 @@ const App = () => {
           Data provided by DVRPC,{" "}
           <a
             className="underline"
-            href=" https://dvrpc-dvrpcgis.opendata.arcgis.com/datasets/greater-
-philadelphia-tract-level-indicators-of-potential-disadvantage-ipd-2019/explore"
+            href=" https://dvrpc-dvrpcgis.opendata.arcgis.com/datasets/greater-philadelphia-tract-level-indicators-of-potential-disadvantage-ipd-2019/explore"
           >
             2019 Indicators of Potential Disadvantage
           </a>
