@@ -9,21 +9,20 @@ const App = () => {
   const [feature, setFeature] = useState(null);
 
   useEffect(() => {
-    // const fetchData = async () => {
-    //   const req = await fetch(
-    //     "https://arcgis.dvrpc.org/portal/rest/services/Demographics/IPD_2019/FeatureServer/0/query?where=1%3D1&geometryPrecision=5&outfields=ipd_score,d_score,em_score,f_score,fb_score,lep_score,li_score,oa_score,rm_score,y_score&f=geojson"
-    //   );
-    //   const res = await req.json();
-    //   setTimeout(() => {}, 500);
-    //   return res;
-    // };
+    const fetchData = async () => {
+      const req = await fetch(
+        "https://arcgis.dvrpc.org/portal/rest/services/Demographics/IPD_2019/FeatureServer/0/query?where=1%3D1&geometryPrecision=5&outfields=ipd_score,d_score,em_score,f_score,fb_score,lep_score,li_score,oa_score,rm_score,y_score&f=geojson"
+      );
+      const res = await req.json();
+      return res;
+    };
 
-    // fetchData()
-    //   .then((res) => setGeoJson(res))
-    //   .catch((err) => console.log(err));
+    fetchData()
+      .then((res) => setGeoJson(res))
+      .catch((err) => console.log(err));
 
     // testing
-    setGeoJson(jsonData);
+    // setGeoJson(jsonData);
   }, []);
 
   return (
@@ -38,18 +37,18 @@ const App = () => {
           Indicators of Potential Disadvantage (IPD)
         </div>
       </div>
-      <div className="flex flex-col md:flex-none h-full content">
-        <div className="md:w-2/5 md:absolute lg:w-1/4 h-1/2 rounded-lg z-1000 bg-white md:m-2 flex justify-center">
-          <Sidebar feature={feature} setFeature={setFeature} />
-        </div>
-        <div className="h-full relative">
-          {geoJson ? (
+      {geoJson ? (
+        <div className="flex flex-col md:flex-none h-full content">
+          <div className="md:w-2/5 md:absolute lg:w-1/4 h-1/2 rounded-lg z-1000 bg-white md:m-2 flex justify-center">
+            <Sidebar feature={feature} setFeature={setFeature} />
+          </div>
+          <div className="h-full relative">
             <Map geoJson={geoJson} setFeature={setFeature} />
-          ) : (
-            <Loader />
-          )}
+          </div>
         </div>
-      </div>
+      ) : (
+        <Loader />
+      )}
       <div className="header-footer flex bg-zinc-900 text-white font-bold flex justify-center items-center text-xs md:text-base">
         <div>
           Data provided by DVRPC,{" "}

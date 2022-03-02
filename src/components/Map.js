@@ -39,6 +39,7 @@ const Map = ({ geoJson, setFeature }) => {
     });
     layer.on("mouseover", () => {
       setFeatureStyle(layer);
+      layer.bindPopup("IPD Score: " + feature.properties.ipd_score).openPopup();
     });
     layer.on("mouseout", () => {
       layer.setStyle({
@@ -46,6 +47,7 @@ const Map = ({ geoJson, setFeature }) => {
         weight: 1,
       });
       layer.bringToBack();
+      layer.closePopup();
     });
   };
 

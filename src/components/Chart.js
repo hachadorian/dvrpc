@@ -1,5 +1,12 @@
 import React from "react";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  ResponsiveContainer,
+  Tooltip,
+} from "recharts";
 
 const Chart = ({ data }) => {
   return (
@@ -21,6 +28,7 @@ const Chart = ({ data }) => {
         <XAxis type="number" domain={[0, 4]} />
         <YAxis type="category" dataKey="key" />
         <Bar dataKey="value" fill="darkgray" />
+        <Tooltip />
       </BarChart>
     </ResponsiveContainer>
   );
