@@ -4,7 +4,7 @@
  * @returns String
  */
 export const getColor = (score) => {
-  const shade = Math.floor((9 * score) / 36) - 1;
+  const shade = Math.floor(score / 4) - 1;
   if (shade < 0) return "white";
   else return colorWheel[shade];
 };
