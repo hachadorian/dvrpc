@@ -4,19 +4,19 @@
  * @returns String
  */
 export const getColor = (score) => {
-  const shade = Math.floor((9 * score) / 36);
+  const shade = Math.floor((9 * score) / 36) + 1;
   if (shade < 0) return "white";
   else return colorWheel[shade];
 };
 
 const colorWheel = [
-  "#fefedb",
-  "#edf7b7",
-  "#cbeaba",
-  "#8ad0c0",
-  "#4ebac8",
-  "#2a94bf",
-  "#386eb1",
-  "#3a489d",
-  "#203368",
+  "#ffffd9",
+  "#edf8b1",
+  "#c7e9b4",
+  "#7fcdbb",
+  "#41b6c4",
+  "#1d91c0",
+  "#225ea8",
+  "#253494",
+  "#081d58",
 ];

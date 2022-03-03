@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import jsonData from "./helpers/object.json";
+import jsonData from "./helpers/object.json";
 import Sidebar from "./components/Sidebar";
 import Map from "./components/Map";
 import Loader from "./components/Loader";
@@ -19,7 +19,10 @@ const App = () => {
 
     fetchData()
       .then((res) => setGeoJson(res))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setGeoJson(jsonData);
+      });
 
     // testing
     // setGeoJson(jsonData);

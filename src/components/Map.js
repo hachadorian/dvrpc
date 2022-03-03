@@ -16,14 +16,6 @@ const Map = ({ geoJson, setFeature }) => {
     };
   };
 
-  const setFeatureStyle = (layer) => {
-    layer.setStyle({
-      color: "#EFD780",
-      weight: 3,
-    });
-    layer.bringToFront();
-  };
-
   const mapOnEachFeature = (feature, layer) => {
     // disables polygons without ipd_score
     if (feature.properties.ipd_score < 0) {
@@ -34,11 +26,13 @@ const Map = ({ geoJson, setFeature }) => {
     layer.on("click", () => {
       // set feature to display breakdown of scores
       setFeature(feature);
-      setFeatureStyle(layer);
-      layer.bringToFront();
     });
     layer.on("mouseover", () => {
-      setFeatureStyle(layer);
+      layer.setStyle({
+        color: "#EFD780",
+        weight: 3,
+      });
+      layer.bringToFront();
       layer.bindPopup("IPD Score: " + feature.properties.ipd_score).openPopup();
     });
     layer.on("mouseout", () => {

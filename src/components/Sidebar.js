@@ -1,6 +1,7 @@
 import React from "react";
 import Chart from "./Chart";
 import { formatProperties } from "../helpers/formatProperties";
+import { IoCaretBackOutline } from "react-icons/io5";
 
 const Sidebar = ({ feature, setFeature }) => {
   let formattedProperties = null;
@@ -10,15 +11,15 @@ const Sidebar = ({ feature, setFeature }) => {
   }
 
   return (
-    <div className="px-4 pt-1 text-center md:py-2">
+    <div className="px-8 pt-1 text-center md:py-2">
       {feature && (
         <div
-          className="text-blue-500 absolute cursor-pointer hover:underline"
+          className="text-blue-500 absolute cursor-pointer hover:underline pt-1"
           onClick={(e) => {
             setFeature(null);
           }}
         >
-          Back
+          <IoCaretBackOutline scale={"20%"} />
         </div>
       )}
       <div className="flex justify-center">
