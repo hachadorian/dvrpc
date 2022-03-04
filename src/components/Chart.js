@@ -10,7 +10,7 @@ import {
 
 const Chart = ({ data }) => {
   return (
-    <ResponsiveContainer width={300} height="85%" className="mt-1.5">
+    <ResponsiveContainer width={300} height="90%" className="mt-1.5">
       <BarChart
         data={data}
         layout={"vertical"}
